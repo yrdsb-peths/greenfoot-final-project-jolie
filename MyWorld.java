@@ -23,6 +23,7 @@ public class MyWorld extends World
         addObject (hi, 300, 350);
         
         spawnGummy();
+        spawnBomb();
         
         addObject (scoreLabel, 50, 50);
         
@@ -36,7 +37,14 @@ public class MyWorld extends World
         Gummy qq = new Gummy();
         addObject(qq, x, y);
     }
-    
+    public void spawnBomb()
+    {
+        int x = Greenfoot.getRandomNumber(600);
+        int y = Greenfoot.getRandomNumber(400);
+        
+        Bomb gone = new Bomb();
+        addObject(gone, x, y);
+    }
     public void increaseScore()
     {
         score++;

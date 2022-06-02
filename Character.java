@@ -33,6 +33,7 @@ public class Character extends Actor
         }
         
         eat();
+        die();
     }
     
     public void eat()
@@ -45,6 +46,16 @@ public class Character extends Actor
             world.spawnGummy();
         }
     }
+    
+    public void die()
+    {
+        if (isTouching(Bomb.class))
+        {
+            removeTouching(Bomb.class);
+            MyWorld world = (MyWorld) getWorld();
+            
+            world.gameOver();
+        }
+    }
 }
-
 
