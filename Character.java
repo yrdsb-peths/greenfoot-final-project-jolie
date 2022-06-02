@@ -8,6 +8,41 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Character extends Actor
 {
+    
+    GreenfootImage[] idleRight = new GreenfootImage[10];
+    GreenfootImage[] idleLeft = new GreenfootImage[10];
+    
+    String facing = "right";
+    
+    public Character()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            idleRight[1] = new GreenfootImage("images/idle" + i + ".png");
+        }
+        for (int i = 0; i < 10; i++)
+        {
+            idleLeft[i] = new GreenfootImage ("images/idle" + i + ".png");
+            idleLeft[i].mirrorHorizontally();
+            
+        }
+    }
+    
+    int imageIndex = 0;
+    public void animateCharacter()
+    {
+        if (facing.equals("right"))
+        {
+            setImage(idleRight[imageIndex]);
+            imageIndex = (imageIndex+1) % idleRight.length;
+        }
+        else
+        {
+            setImage (idleLeft[imageIndex]);
+            imageIndex = (imageIndex+1) % idleRight.length;
+        }
+        }
+    
     /**
      * Act - do whatever the Character wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -18,10 +53,12 @@ public class Character extends Actor
         if (Greenfoot.isKeyDown("a"))
         {
             setLocation (getX()-2, getY());
+            facing = "left";
         }
         if (Greenfoot.isKeyDown("d"))
         {
             setLocation (getX()+2, getY());
+            facing = "right";
         }
         if (Greenfoot.isKeyDown("w"))
         {
@@ -32,6 +69,7 @@ public class Character extends Actor
             setLocation (getX(), getY()+2);
         }
         
+        animateCharacter();
         eat();
         die();
     }
