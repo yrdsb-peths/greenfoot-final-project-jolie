@@ -8,19 +8,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Character extends Actor
 {
-    
-    GreenfootImage[] idleRight = new GreenfootImage[10];
-    GreenfootImage[] idleLeft = new GreenfootImage[10];
+    GreenfootImage[] idleRight = new GreenfootImage[4];
+    GreenfootImage[] idleLeft = new GreenfootImage[4];
     
     String facing = "right";
     
     public Character()
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 4; i++)
         {
             idleRight[1] = new GreenfootImage("images/idle" + i + ".png");
         }
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 4; i++)
         {
             idleLeft[i] = new GreenfootImage ("images/idle" + i + ".png");
             idleLeft[i].mirrorHorizontally();
@@ -41,13 +40,12 @@ public class Character extends Actor
             setImage (idleLeft[imageIndex]);
             imageIndex = (imageIndex+1) % idleRight.length;
         }
-        }
-    
+    }
     /**
      * Act - do whatever the Character wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void act()
+    public void act() 
     {
         // Add your action code here.
         if (Greenfoot.isKeyDown("a"))
@@ -73,7 +71,6 @@ public class Character extends Actor
         eat();
         die();
     }
-    
     public void eat()
     {
         if (isTouching(Gummy.class))
@@ -96,4 +93,3 @@ public class Character extends Actor
         }
     }
 }
-

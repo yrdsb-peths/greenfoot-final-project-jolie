@@ -8,8 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-    public int score = 0;
-    public Label scoreLabel = new Label(score, 100);
+    public int score = 0; 
+    public Label scoreLabel = new Label (score, 100);
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -17,7 +17,7 @@ public class MyWorld extends World
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1, false);
+        super(600, 400, 1); 
         
         Character hi = new Character();
         addObject (hi, 300, 350);
@@ -25,7 +25,7 @@ public class MyWorld extends World
         spawnGummy();
         spawnBomb();
         
-        addObject (scoreLabel, 50, 50);
+        addObject(scoreLabel, 50, 50);
         
     }
     
@@ -44,6 +44,7 @@ public class MyWorld extends World
         
         Bomb gone = new Bomb();
         addObject(gone, x, y);
+
     }
     public void increaseScore()
     {
@@ -52,8 +53,7 @@ public class MyWorld extends World
     }
     public void gameOver()
     {
-        Label gameOverLabel = new Label ("Game Over!" , 100);
+        Label gameOverLabel = new Label ("Game over!" , 100);
         addObject (gameOverLabel, 300, 200);
     }
 }
-
