@@ -15,7 +15,8 @@ public class Gummy extends Actor
     public void act() 
     {
         // Add your action code here.
-        
+        GreenfootImage gummy = getImage();
+        gummy.scale(45,40);
         int x = getX();
         int y = getY();
         
