@@ -24,6 +24,7 @@ public class MyWorld extends World
         
         spawnGummy();
         spawnBomb();
+        spawnPudding();
         
         addObject(scoreLabel, 50, 50);
         
@@ -46,9 +47,23 @@ public class MyWorld extends World
         addObject(gone, x, y);
 
     }
-    public void increaseScore()
+    public void spawnPudding()
+    {
+        int x = Greenfoot.getRandomNumber(600);
+        int y = Greenfoot.getRandomNumber(400);
+        
+        Pudding boing = new Pudding();
+        addObject(boing, x, y);
+
+    }
+    public void increaseScoreG()
     {
         score++;
+        scoreLabel.setValue(score);
+    }
+    public void increaseScoreP()
+    {
+        score+=2;
         scoreLabel.setValue(score);
     }
     public void gameOver()

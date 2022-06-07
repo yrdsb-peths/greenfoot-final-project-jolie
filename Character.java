@@ -17,13 +17,14 @@ public class Character extends Actor
     {
         for (int i = 0; i < 4; i++)
         {
-            idleRight[1] = new GreenfootImage("images/idle" + i + ".png");
+            idleRight[i] = new GreenfootImage("images/idle" + i + ".png");
+            idleRight[i].scale(70,50);
         }
         for (int i = 0; i < 4; i++)
         {
             idleLeft[i] = new GreenfootImage ("images/idle" + i + ".png");
             idleLeft[i].mirrorHorizontally();
-            
+            idleLeft[i].scale(70,50);
         }
     }
     
@@ -77,8 +78,15 @@ public class Character extends Actor
         {
             removeTouching(Gummy.class);
             MyWorld world = (MyWorld) getWorld();
-            world.increaseScore();
+            world.increaseScoreG();
             world.spawnGummy();
+        }
+        if (isTouching(Pudding.class))
+        {
+            removeTouching(Pudding.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.increaseScoreP();
+            world.spawnPudding();
         }
     }
     
