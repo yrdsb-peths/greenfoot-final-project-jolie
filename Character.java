@@ -10,6 +10,7 @@ public class Character extends Actor
 {
     GreenfootImage[] idleRight = new GreenfootImage[4];
     GreenfootImage[] idleLeft = new GreenfootImage[4];
+    private SimpleTimer timer;
     
     String facing = "right";
     
@@ -26,20 +27,28 @@ public class Character extends Actor
             idleLeft[i].mirrorHorizontally();
             idleLeft[i].scale(70,50);
         }
+        timer = new SimpleTimer();
+        timer.mark();
     }
     
     int imageIndex = 0;
     public void animateCharacter()
     {
-        if (facing.equals("right"))
+        if (timer.millisElapsed() > 100)
         {
-            setImage(idleRight[imageIndex]);
-            imageIndex = (imageIndex+1) % idleRight.length;
-        }
-        else
-        {
-            setImage (idleLeft[imageIndex]);
-            imageIndex = (imageIndex+1) % idleRight.length;
+            {
+                if (facing.equals("right"))
+                {
+                    setImage(idleRight[imageIndex]);
+                    imageIndex = (imageIndex+1) % idleRight.length;
+                }
+                else
+                {
+                    setImage (idleLeft[imageIndex]);
+                    imageIndex = (imageIndex+1) % idleRight.length;
+                }
+                timer.mark();
+            }
         }
     }
     /**
