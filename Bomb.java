@@ -12,6 +12,8 @@ public class Bomb extends Actor
      * Act - do whatever the Bomb wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
+    //GreenfootSound explode = new GreenfootSound("mixkit-war-field-explosion-1702.mp3");
     GreenfootImage[] idle = new GreenfootImage[5]; 
     public void act() 
     {
@@ -38,6 +40,7 @@ public class Bomb extends Actor
     {
         if (isTouching(Character.class))
         {
+            //explode.play();
             setImage(idle[imageIndex]);
             imageIndex = (imageIndex+1) % idle.length;
         }

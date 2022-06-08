@@ -49,12 +49,13 @@ public class MyWorld extends World
     }
     public void spawnPudding()
     {
+    
         int x = Greenfoot.getRandomNumber(600);
         int y = Greenfoot.getRandomNumber(400);
         
         Pudding boing = new Pudding();
         addObject(boing, x, y);
-
+    
     }
     public void increaseScoreG()
     {

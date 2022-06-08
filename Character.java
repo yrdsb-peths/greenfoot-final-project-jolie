@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Character extends Actor
 {
+    GreenfootSound bubblePop = new GreenfootSound("sounds_QKTA234-pop.mp3"); 
     GreenfootImage[] idleRight = new GreenfootImage[4];
     GreenfootImage[] idleLeft = new GreenfootImage[4];
     private SimpleTimer timer;
@@ -85,6 +86,7 @@ public class Character extends Actor
     {
         if (isTouching(Gummy.class))
         {
+            bubblePop.play();
             removeTouching(Gummy.class);
             MyWorld world = (MyWorld) getWorld();
             world.increaseScoreG();
@@ -92,6 +94,7 @@ public class Character extends Actor
         }
         if (isTouching(Pudding.class))
         {
+            bubblePop.play();
             removeTouching(Pudding.class);
             MyWorld world = (MyWorld) getWorld();
             world.increaseScoreP();
