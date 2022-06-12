@@ -103,6 +103,17 @@ public class Character extends Actor
             world.spawnBomb();
             world.spawnBomb();
         }
+        if (isTouching(Candy.class))
+        {
+            bubblePop.play();
+            removeTouching(Candy.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.increaseScoreC();
+            world.spawnCandy();
+            world.spawnBomb();
+            world.spawnBomb();
+            world.spawnBomb();
+        }
     }
     
     public void die()

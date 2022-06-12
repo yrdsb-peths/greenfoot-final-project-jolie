@@ -25,7 +25,7 @@ public class MyWorld extends World
         
         spawnGummy();
         spawnBomb();
-        runBombSpawnTimer();
+        spawnCandy();
         spawnPudding();
     
         addObject(scoreLabel, 50, 50);
@@ -40,7 +40,15 @@ public class MyWorld extends World
         Gummy qq = new Gummy();
         addObject(qq, x, y);
     }
-    
+    public void spawnCandy()
+    {
+        int x = Greenfoot.getRandomNumber(600);
+        int y = Greenfoot.getRandomNumber(400);
+        
+        Candy sweet = new Candy();
+        addObject(sweet, x, y);
+    }
+
     public void spawnBomb()
     {
         int x = Greenfoot.getRandomNumber(600);
@@ -50,18 +58,7 @@ public class MyWorld extends World
         addObject(gone, x, y);
 
     }
-    private void runBombSpawnTimer()
-    {
-        bombSpawnTimer = (bombSpawnTimer + 1) % 250;
-        if (bombSpawnTimer == 0)
-        {
-            int x = Greenfoot.getRandomNumber(600);
-            int y = 0;
-            
-            Bomb gone = new Bomb();
-            addObject(gone, x, y);
-        }
-    }
+    
     public void spawnPudding()
     {
     
@@ -82,9 +79,16 @@ public class MyWorld extends World
         score+=2;
         scoreLabel.setValue(score);
     }
+    public void increaseScoreC()
+    {
+        score+=3;
+        scoreLabel.setValue(score);
+    }
     public void gameOver()
     {
         Label gameOverLabel = new Label ("Game over!" , 100);
         addObject (gameOverLabel, 300, 200);
+        
     }
+    
 }
