@@ -21,7 +21,7 @@ public class Bomb extends Actor
         // Add your action code here.
         int x = getX();
         int y = getY();
-        setLocation (x, y+2);
+        setLocation (x, y+ (Greenfoot.getRandomNumber(6)));
         
         MyWorld world = (MyWorld) getWorld();
         if (getY() >= world.getHeight())

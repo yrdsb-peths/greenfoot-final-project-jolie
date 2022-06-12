@@ -91,6 +91,7 @@ public class Character extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.increaseScoreG();
             world.spawnGummy();
+            world.spawnBomb();
         }
         if (isTouching(Pudding.class))
         {
@@ -99,6 +100,8 @@ public class Character extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.increaseScoreP();
             world.spawnPudding();
+            world.spawnBomb();
+            world.spawnBomb();
         }
     }
     
