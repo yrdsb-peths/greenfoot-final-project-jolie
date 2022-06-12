@@ -13,20 +13,23 @@ public class Bomb extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    //GreenfootSound explode = new GreenfootSound("mixkit-war-field-explosion-1702.mp3");
+    //GreenfootSound explode = new GreenfootSound("explosion.mp3");
     GreenfootImage[] idle = new GreenfootImage[5]; 
+    
     public void act() 
     {
         // Add your action code here.
         int x = getX();
         int y = getY();
-        
-        setLocation (x,y);
+        setLocation (x, y+2);
         
         MyWorld world = (MyWorld) getWorld();
-        
-        animateBomb();
+        if (getY() >= world.getHeight())
+        {
+            world.removeObject(this);
+        }
     }
+    
     
     public void Character()
     {
@@ -35,6 +38,7 @@ public class Bomb extends Actor
             idle[i] = new GreenfootImage("images/bomb" + i + ".png");
         }
     }
+    
     int imageIndex = 0;
     public void animateBomb()
     {

@@ -10,6 +10,7 @@ public class MyWorld extends World
 {
     public int score = 0; 
     public Label scoreLabel = new Label (score, 100);
+    private int bombSpawnTimer;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -17,15 +18,16 @@ public class MyWorld extends World
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(600, 400, 1, false); 
         
         Character hi = new Character();
         addObject (hi, 300, 350);
         
         spawnGummy();
         spawnBomb();
+        runBombSpawnTimer();
         spawnPudding();
-        
+    
         addObject(scoreLabel, 50, 50);
         
     }
@@ -38,14 +40,27 @@ public class MyWorld extends World
         Gummy qq = new Gummy();
         addObject(qq, x, y);
     }
+    
     public void spawnBomb()
     {
         int x = Greenfoot.getRandomNumber(600);
-        int y = Greenfoot.getRandomNumber(400);
+        int y = 0;
         
         Bomb gone = new Bomb();
         addObject(gone, x, y);
 
+    }
+    private void runBombSpawnTimer()
+    {
+        bombSpawnTimer = (bombSpawnTimer + 1) % 250;
+        if (bombSpawnTimer == 0)
+        {
+            int x = Greenfoot.getRandomNumber(600);
+            int y = 0;
+            
+            Bomb gone = new Bomb();
+            addObject(gone, x, y);
+        }
     }
     public void spawnPudding()
     {
