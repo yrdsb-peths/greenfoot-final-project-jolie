@@ -16,6 +16,7 @@ public class Instructions extends World
     Label instructions6 = new Label ("the more the gummy is worth,",35);
     Label instructions7 = new Label ("the more bombs it spawns",35);
     Label instructions8 = new Label("Avoid the bomb", 50);
+    Label instructions9 = new Label ("Press space to start", 50);
     /**
      * Constructor for objects of class Instructions.
      * 
@@ -32,7 +33,8 @@ public class Instructions extends World
         addObject (instructions5, getWidth()/2, 240);
         addObject (instructions6, getWidth()/2, 270);
         addObject (instructions7, getWidth()/2, 300);
-        addObject (instructions8, getWidth()/2, 350);
+        addObject (instructions8, getWidth()/2, 340);
+        addObject (instructions9, getWidth()/2, 380);
     }
     
     public void act()

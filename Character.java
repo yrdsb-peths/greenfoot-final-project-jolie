@@ -124,6 +124,9 @@ public class Character extends Actor
             MyWorld world = (MyWorld) getWorld();
             
             world.gameOver();
+            
+            EndScreen replay = new EndScreen();
+            Greenfoot.setWorld(replay);
         }
     }
 }
