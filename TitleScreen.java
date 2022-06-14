@@ -8,9 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class TitleScreen extends World
 {
-    Label titleLabel = new Label("Gummy", 100);
-    Label bottomLabel = new Label ("Press space to begin", 50);
-    Label instructionLabel = new Label ("Press 'i' for instructions", 50);
+    
     /**
      * Constructor for objects of class TitleScreen.
      * 
@@ -20,9 +18,6 @@ public class TitleScreen extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
         
-        addObject (titleLabel, getWidth()/2, 150);
-        addObject (bottomLabel, getWidth()/2, 230);
-        addObject (instructionLabel, getWidth()/2, 300);
     }
     
     public void act()

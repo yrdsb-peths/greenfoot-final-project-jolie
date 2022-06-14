@@ -8,8 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class EndScreen extends World
 {
-    Label text1 = new Label("Game Over :(", 50);
-    Label text2 = new Label("Press space to play again", 50);
+    
+
     /**
      * Constructor for objects of class EndScreen.
      * 
@@ -18,8 +18,9 @@ public class EndScreen extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
-        addObject (text1, getWidth()/2, 150);
-        addObject (text2, getWidth()/2, 210);
+       
+        
+        
     }
     
     public void act()
@@ -28,6 +29,11 @@ public class EndScreen extends World
         {
             MyWorld gameWorld = new MyWorld();
             Greenfoot.setWorld(gameWorld);
+        }
+        if(Greenfoot.isKeyDown("backspace"))
+        {
+            TitleScreen beginning = new TitleScreen();
+            Greenfoot.setWorld(beginning);
         }
     }
 }
