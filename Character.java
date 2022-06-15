@@ -61,27 +61,31 @@ public class Character extends Actor
         // Add your action code here.
         if (Greenfoot.isKeyDown("a"))
         {
-            setLocation (getX()-2, getY());
+            setLocation (getX()-3, getY());
             facing = "left";
         }
         if (Greenfoot.isKeyDown("d"))
         {
-            setLocation (getX()+2, getY());
+            setLocation (getX()+3, getY());
             facing = "right";
         }
         if (Greenfoot.isKeyDown("w"))
         {
-            setLocation (getX(), getY()-2);
+            setLocation (getX(), getY()-3);
         }
         if (Greenfoot.isKeyDown("s"))
         {
-            setLocation (getX(), getY()+2);
+            setLocation (getX(), getY()+3);
         }
         
         animateCharacter();
         eat();
         die();
     }
+    
+    /**
+     * Character eating the candies will increase the score and spawn bombs
+     */
     public void eat()
     {
         if (isTouching(Gummy.class))
@@ -116,15 +120,15 @@ public class Character extends Actor
         }
     }
     
+    /**
+     * Game ends when character touches bomb
+     */
     public void die()
     {
         if (isTouching(Bomb.class))
         {
             removeTouching(Bomb.class);
             MyWorld world = (MyWorld) getWorld();
-            
-            world.gameOver();
-            
             EndScreen replay = new EndScreen();
             Greenfoot.setWorld(replay);
         }

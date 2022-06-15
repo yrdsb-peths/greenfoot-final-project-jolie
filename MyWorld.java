@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
+ * The main game world
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Jolie
+ * @version June 2022
  */
 public class MyWorld extends World
 {
@@ -32,6 +32,10 @@ public class MyWorld extends World
         
     }
     
+    /**
+     * Spawns the yellow candy
+     */
+    
     public void spawnGummy()
     {
         int x = Greenfoot.getRandomNumber(600);
@@ -40,25 +44,10 @@ public class MyWorld extends World
         Gummy qq = new Gummy();
         addObject(qq, x, y);
     }
-    public void spawnCandy()
-    {
-        int x = Greenfoot.getRandomNumber(600);
-        int y = Greenfoot.getRandomNumber(400);
-        
-        Candy sweet = new Candy();
-        addObject(sweet, x, y);
-    }
-
-    public void spawnBomb()
-    {
-        int x = Greenfoot.getRandomNumber(600);
-        int y = 0;
-        
-        Bomb gone = new Bomb();
-        addObject(gone, x, y);
-
-    }
     
+    /**
+     * Spawns the blue candy
+     */
     public void spawnPudding()
     {
     
@@ -69,26 +58,56 @@ public class MyWorld extends World
         addObject(boing, x, y);
     
     }
+    
+    /**
+     * Spawns the green candy
+     */
+    public void spawnCandy()
+    {
+        int x = Greenfoot.getRandomNumber(600);
+        int y = Greenfoot.getRandomNumber(400);
+        
+        Candy sweet = new Candy();
+        addObject(sweet, x, y);
+    }
+
+    /**
+     * Spawns the bomb
+     */
+    public void spawnBomb()
+    {
+        int x = Greenfoot.getRandomNumber(600);
+        int y = 0;
+        
+        Bomb gone = new Bomb();
+        addObject(gone, x, y);
+
+    }
+    
+    /**
+     * Score increase interval when yellow candy is eaten
+     */
     public void increaseScoreG()
     {
         score++;
         scoreLabel.setValue(score);
     }
+    
+    /**
+     * Score increase interval when blue candy is eaten
+     */
     public void increaseScoreP()
     {
         score+=2;
         scoreLabel.setValue(score);
     }
+    
+    /**
+     * Score increase interval when green candy is eaten
+     */
     public void increaseScoreC()
     {
         score+=3;
         scoreLabel.setValue(score);
     }
-    public void gameOver()
-    {
-        Label gameOverLabel = new Label ("Game over!" , 100);
-        addObject (gameOverLabel, 300, 200);
-        
-    }
-    
 }

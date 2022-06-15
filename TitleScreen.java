@@ -1,10 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class TitleScreen here.
+ * The initial game start screen
+ * Has the options of starting the game or reviewing instructions
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Jolie
+ * @version June 2022
  */
 public class TitleScreen extends World
 {
@@ -17,9 +18,11 @@ public class TitleScreen extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
-        
     }
     
+    /**
+     * Options of starting the game or reviewing instructions
+     */
     public void act()
     {
         if(Greenfoot.isKeyDown("space"))

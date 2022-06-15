@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Candy here.
+ * Green coloured candy
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Jolie
+ * @version June 2022
  */
 public class Candy extends Actor
 {

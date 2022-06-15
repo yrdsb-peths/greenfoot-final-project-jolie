@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Bomb
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Bomb\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ The\ bomb\ falls\ and\ the\ character\ must\ avoid\ it\ \r\n\ \r\n\ @author\ Jolie\r\n\ @version\ June\ 2022\r\n
 comment1.params=
 comment1.target=void\ act()
 comment2.params=
