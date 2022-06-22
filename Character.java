@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Character here.
+ * The main character the user is controlling
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Jolie
+ * @version June 2022
  */
 public class Character extends Actor
 {
@@ -15,6 +15,9 @@ public class Character extends Actor
     
     String facing = "right";
     
+    /**
+     * Animations for the character
+     */
     public Character()
     {
         for (int i = 0; i < 4; i++)
@@ -58,7 +61,7 @@ public class Character extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
+        // Lets user control character movement
         if (Greenfoot.isKeyDown("a"))
         {
             setLocation (getX()-3, getY());

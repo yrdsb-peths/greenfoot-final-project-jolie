@@ -13,12 +13,11 @@ public class Bomb extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    //GreenfootSound explode = new GreenfootSound("explosion.mp3");
     GreenfootImage[] idle = new GreenfootImage[5]; 
     
     public void act() 
     {
-        // Add your action code here.
+        // Sets the sizing and image on main world and disappears at bottom
         int x = getX();
         int y = getY();
         setLocation (x, y+ (Greenfoot.getRandomNumber(6)));
@@ -44,7 +43,6 @@ public class Bomb extends Actor
     {
         if (isTouching(Character.class))
         {
-            //explode.play();
             setImage(idle[imageIndex]);
             imageIndex = (imageIndex+1) % idle.length;
         }

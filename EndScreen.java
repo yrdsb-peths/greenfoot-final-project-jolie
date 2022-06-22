@@ -19,6 +19,9 @@ public class EndScreen extends World
         super(600, 400, 1); 
     }
     
+    /**
+     * Control options when game ends
+     */
     public void act()
     {
         if(Greenfoot.isKeyDown("space"))

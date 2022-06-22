@@ -20,9 +20,11 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1, false); 
         
+        //Our main pink blob character
         Character hi = new Character();
         addObject (hi, 300, 350);
         
+        //Spawns the objects in the game
         spawnGummy();
         spawnBomb();
         spawnCandy();

@@ -14,7 +14,7 @@ public class Pudding extends Actor
      */
     public void act()
     {
-        // Add your action code here.
+        // Sets the sizing and image on main world
         GreenfootImage pudding = getImage();
         pudding.scale(45,40);
         int x = getX();
